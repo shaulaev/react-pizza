@@ -1,19 +1,33 @@
+@use "../../assets/colors" as var;
+
 .header {
     height: 80px;
+    border-bottom: 1px solid #F6F6F6;
+}
+
+.header::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: #F6F6F6;
+    left: 0;
 }
 
 .container {
     display: flex;
     justify-content: space-between;
-    max-width: 1400px;
-    padding: 0 20px;
-    background-color: red;
     height: 100%;
     margin: auto;
 }
 
 .logo {
     display: flex;
+    height: fit-content;
+
+    img {
+        margin-right: 17px;
+    }
 
     h2 {
         font-size: 24px;
@@ -27,4 +41,53 @@
     }
 }
 
-.cart {}
+.logoText {
+
+    h1 {
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 29px;
+        letter-spacing: 0.01em;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: #7B7B7B;
+    }
+}
+
+.cart {
+    display: flex;
+    align-items: center;
+    padding: 23px;
+    width: 150px;
+    height: 50px;
+    background: var.$orange-color;
+    border-radius: 30px;
+
+    span {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19px;
+        color: #FFFFFF;
+    }
+
+    span:nth-child(1) {
+        border-right: 1px solid rgba(255, 255, 255, 0.25);;
+        padding-right: 10px;
+    }
+
+    div {
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        
+        img {
+            margin-right: 8px;
+        }
+    }
+}
