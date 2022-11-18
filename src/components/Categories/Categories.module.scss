@@ -1,11 +1,17 @@
-.categories, .category, .categoryActive {
+@use "../../assets/colors" as var;
+
+.categoriesMain {
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.categories, .category, .categoryActive, .categoriesMain, .sort {
     display: flex;
     align-items: center;
 }
 
-.categories {
+.categories, .categoriesMain {
     flex-wrap: wrap;
-    margin-top: 40px;
 }
 
 .category, .categoryActive {
@@ -41,3 +47,23 @@
     }
 }
 
+.sort {
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    .black {
+        margin: 0 8px 0 7px;
+    }
+
+    .orange {
+        color: var.$orange-color;
+        border-bottom: 1px dashed var.$orange-color;
+    }
+
+    svg, .down {
+        transition: .2s;
+    }
+    .down {
+        transform: rotate(180deg);
+    }
+}

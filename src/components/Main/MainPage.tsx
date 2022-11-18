@@ -1,13 +1,11 @@
 import React from 'react'
 import "./Main.scss"
-import { Header } from '../Header/Header';
-import { Categories } from '../Categories/Categories';
+import { Content } from './Content/Content';
 
 export const MainPage: React.FC = () => {
   return (
     <main className='main'>
-      <Header />
-      <Categories/>
+      <Content/>
     </main>
   )
 }

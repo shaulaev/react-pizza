@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Sort } from './Sort'
 import cl from "./Categories.module.scss"
 
 export const Categories: React.FC = () => {
@@ -10,12 +11,21 @@ export const Categories: React.FC = () => {
   const [active, setActive] = useState(0)
 
   return (
-    <div className={cl.categories}>{
-    types.map((item, index) => {
-        return (
-            <li key={item} onClick={() => setActive(index)} className={active === index ? cl.categoryActive : cl.category}>{item}</li>
-        )
-    })}
+    <div className={cl.categoriesMain}>
+      <ul className={cl.categories}>
+      {types.map((item, index) => {
+          return (
+              <li key={item} 
+              onClick={() => setActive(index)} 
+              className={active === index ? cl.categoryActive : cl.category}>
+
+                {item}
+              
+              </li>
+          )
+      })}
+      </ul>
+      <Sort />
     </div>
   )
 }
