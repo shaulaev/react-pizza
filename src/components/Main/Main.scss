@@ -5,3 +5,15 @@
     padding: 67px;
     position: relative;
 }
+
+.allPizza {
+    margin: 32px 0;
+    font-weight: 700;
+}
+
+.pizza-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}

@@ -7,9 +7,9 @@ export const Sort: React.FC = () => {
   const [dropdown, setDropdown] = useState(false)
   const [sort, setSort] = useState("популярности")
   const [allSorts] = useState([
-    "популярности",
-    "по цене",
-    "по алфавиту"
+    {id: 1, name: "по популярности"},
+    {id: 2, name: "по цене"},
+    {id: 3, name: "по алфавиту"}
   ])
 
   const offDropdownMenu = () => setDropdown(false)
@@ -26,7 +26,7 @@ export const Sort: React.FC = () => {
         <Dropdown state={dropdown} stateFunc={offDropdownMenu}>
           {allSorts.map(sort => {
             return (
-              <li onClick={() => changeSort(sort)}>{sort}</li>
+              <li key={sort.id} onClick={() => changeSort(sort.name)}>{sort.name}</li>
             )
           })}
         </Dropdown>
