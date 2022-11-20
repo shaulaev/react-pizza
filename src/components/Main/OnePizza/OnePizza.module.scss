@@ -44,4 +44,16 @@
             background: #FFFFFF;
         }
     }
+
+    .order {
+        margin-top: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .pizzaPrice {
+        font-weight: 700;
+        font-size: 22px;
+    }
 }

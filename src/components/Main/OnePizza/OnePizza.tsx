@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import cl from "./OnePizza.module.scss"
 import pizza from "../../../assets/img/image 2.png"
+import {OrderButton} from "../../UI/OrderButton/OrderButton"
 
 export const OnePizza: React.FC = () => {
 
@@ -36,6 +37,10 @@ export const OnePizza: React.FC = () => {
                     )
                 })}
             </div>
+        </div>
+        <div className={cl.order}>
+            <div className={cl.pizzaPrice}>от 395Р</div>
+            <OrderButton />
         </div>
     </div>
   )
