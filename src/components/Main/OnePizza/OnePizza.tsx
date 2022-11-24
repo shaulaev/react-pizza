@@ -35,7 +35,7 @@ export const OnePizza: React.FC<any> = ({data}) => {
             </div>
         </div>
         <div className={cl.order}>
-            <div className={cl.pizzaPrice}>от 395Р</div>
+            <div className={cl.pizzaPrice}>{data?.price} ₽</div>
             <OrderButton />
         </div>
     </div>

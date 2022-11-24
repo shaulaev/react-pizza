@@ -9,7 +9,9 @@ export const OrderButton: React.FC = () => {
     setAmount(amount + 1)
   }
 
+  const condition = amount > 0
+
   return (
-    <button className={cl.button} onClick={increaseAmount}>+ Добавить {amount > 0 && amount}</button>
+    <button className={cl.button} onClick={increaseAmount}>+ Добавить <span className= {condition && cl.amount}>{condition && amount}</span></button>
   )
 }
