@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Dropdown } from '../UI/Dropdown/Dropdown'
+import { Dropdown } from '../../UI/Dropdown/Dropdown'
 import cl from "./Categories.module.scss"
 
 export const Sort: React.FC = () => {

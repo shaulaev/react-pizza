@@ -1,0 +1,70 @@
+.cartMain {
+    margin: 97px auto;
+    padding: 0 200px;
+
+    .cartHeading {
+        display: flex;
+        align-items: center;
+
+        span {
+            font-weight: 700;
+            font-size: 32px;
+        }
+    }
+
+    svg {
+        margin-right: 17px;
+    }
+
+    hr {
+        color: #F4F4F4;
+        margin-top: 30px;
+    }
+
+    .cartClear {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        line-height: 19px;
+        color: #B6B6B6;
+        cursor: pointer;
+
+        svg {
+            margin-right: 7px;
+        }
+
+        span {
+            font-size: 16px;
+        }
+    }
+
+    .cartList {
+        margin-top: 30px;
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .firstPart {
+            display: flex;
+            align-items: center;
+
+            .pizzaName {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 22px;
+            }
+
+            .pizzaType, .pizzaSize {
+                font-weight: 400;
+                font-size: 18px;
+                color: #8D8D8D;
+            }
+
+            &>div {
+                margin-left: 15px;
+            }
+        }
+    }
+}
