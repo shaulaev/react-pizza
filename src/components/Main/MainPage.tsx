@@ -7,7 +7,6 @@ import { Header } from '../Header/Header';
 export const MainPage: React.FC = () => {
   return (
     <main className='main'>
-      <Header />
       <CartPage />
     </main>
   )

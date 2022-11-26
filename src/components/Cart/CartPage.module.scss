@@ -16,9 +16,11 @@
         margin-right: 17px;
     }
 
-    hr {
-        color: #F4F4F4;
+    .line {
         margin-top: 30px;
+        height: 1px;
+        background: #F4F4F4;
+        width: 100%;
     }
 
     .cartClear {
@@ -39,11 +41,71 @@
     }
 
     .cartList {
+        max-height: 550px;
+        overflow-x: hidden;
+        overflow-y: auto;
         margin-top: 30px;
+
+        .cartListItem {
+            .line {
+                margin-bottom: 30px;
+            }
+        }
 
         img {
             width: 80px;
             height: 80px;
+        }
+
+        .shell, .secondPart {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .secondPart, .firstPart {
+            flex: 1;
+
+            .price {
+                font-weight: 700;
+                font-size: 22px;
+            }
+
+        }
+
+        .amount {
+            display: flex;
+
+            .count {
+                text-align: center;
+                width: 28px;
+                font-weight: 700;
+                font-size: 22px;
+                color: #000000;
+                margin: 0 12px;
+            }
+        }
+
+        .multipliers, .deleteButton {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 24px;
+            width: 32px;
+            height: 32px;
+            color: #FE5F1E;
+            border-radius: 50%;
+            border: 2px solid #FE5F1E;
+        }
+
+        .deleteButton {
+            transform: rotate(-45deg);
+            color: #D7D7D7;
+            border: 2px solid #D7D7D7;
         }
 
         .firstPart {
