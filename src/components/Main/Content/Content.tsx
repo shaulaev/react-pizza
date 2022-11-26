@@ -7,7 +7,6 @@ import { Pizza } from '../Pizza/Pizza';
 export const Content: React.FC = () => {
   return (
     <>
-      <Header />
       <Categories />
       <Pizza />
     </>

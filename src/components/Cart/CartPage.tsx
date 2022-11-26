@@ -7,6 +7,7 @@ export const CartPage: React.FC = () => {
 
   return (
     <>
+    <main className='main'>
         <Header />
         <div className={cl.cartMain}>
             <div style={{display: "flex", justifyContent: "space-between", width: "100%"}}>
@@ -35,6 +36,7 @@ export const CartPage: React.FC = () => {
                 <CartListItem />
             </div>
         </div>
+        </main>
     </>
   )
 }
