@@ -3,7 +3,7 @@ import cl from "./CartPage.module.scss"
 import { CartListItem } from './CartListItem'
 import { Header } from '../Header/Header'
 
-export const CartPage: React.FC = () => {
+const CartPage: React.FC = () => {
 
   return (
     <>
@@ -40,3 +40,5 @@ export const CartPage: React.FC = () => {
     </>
   )
 }
+
+export default CartPage

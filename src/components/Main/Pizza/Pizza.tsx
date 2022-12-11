@@ -1,20 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import "../Main.scss";
 import { OnePizza } from '../OnePizza/OnePizza';
-import {PizzaBlockSkeleton} from "../OnePizza/PizzaBlockSkeleton"
+import { PizzaBlockSkeleton } from "../OnePizza/PizzaBlockSkeleton"
+import { useAppDispatch, useAppSelector } from '../../../store';
+import { getPizza } from '../../../api/pizza/pizzaApi';
+import { Modal } from '../../UI/Modal/Modal';
 
 export const Pizza: React.FC = () => {
+  const pizzaD = useAppSelector(state => state.pizza)
+  const dispatch = useAppDispatch()
 
-  const [pizza, setPizza] = useState<any[]>([])
+  console.log(pizzaD)
 
-  const fetchPizza = () => {
-    fetch("https://6366ee2679b0914b75d94e74.mockapi.io/pizza").then((data) => data.json())
-    .then((json) => setPizza(json))
-  }
+  useEffect(() => {
+    dispatch(getPizza())
+  }, [dispatch])
 
-  useEffect(fetchPizza, [])
-
-  const loading = () => {
+  const Loading = () => {
     return (
       <>
         <PizzaBlockSkeleton />
@@ -29,14 +31,14 @@ export const Pizza: React.FC = () => {
     <>
         <h1 className='allPizza'>Все пиццы</h1>
         <div className="pizza-container">
+          {pizzaD.error && <Modal>{pizzaD.error.message}</Modal>}
           {
-          pizza.length < 1 ? loading()
-          : 
-          pizza.map(item => {
-            return (
-              <OnePizza data={item} key={item.id}/>
-            )
-          })
+            pizzaD.pending ? <Loading /> :
+            pizzaD && pizzaD.data.map(item => {
+              return (
+                <OnePizza data={item} key={item.id}/>
+              )
+            })
           }
         </div>
     </>
